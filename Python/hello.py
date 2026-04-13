@@ -26,3 +26,6 @@ print ("hello, " + name)
 print ("hello," , end=" ")
 print (name, end=". ")
 print (f"hello, {name}")
+
+# ejemplo de cambios enviados a github
+print("Hola hector, este es un cambio enviado a github")
