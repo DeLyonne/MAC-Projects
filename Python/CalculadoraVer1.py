@@ -1,19 +1,16 @@
 # Crear funcion
-def primer_numero (num1):
-    num1_valido = float(num1)
-    if num1 != num1_valido:
-        print("Numero invalido")
-    else:
-        return "Numero confirmado"
-
-print(primer_numero(5))
-
-def pedir_numero (num1):
-    activado = False
-    while not activado:
+def pedir_numero():
+    while True:
         try:
-            
-
+            num = float(input("Digite un numero: "))
+            print("Número válido detectado")
+            return num
+        except:
+            print("Error: Ingrese un numero valido.")
+        
+numero_valido1 = pedir_numero()
+numero_valido2 = pedir_numero()
+print(numero_valido1, numero_valido2)
 
 usar_calculadora = True
 while usar_calculadora:
