@@ -1,41 +1,17 @@
 # Crear funcion
-def pedir_numero():
+def pedir_numero(mensaje):
     while True:
         try:
-            num = float(input("Digite un numero: "))
-            print("Número válido detectado")
+            num = float(input(mensaje))
             return num
         except:
             print("Error: Ingrese un numero valido.")
         
-numero_valido1 = pedir_numero()
-numero_valido2 = pedir_numero()
-print(numero_valido1, numero_valido2)
 
 usar_calculadora = True
 while usar_calculadora:
-
-    # Solicita al usuario el primer numero y lo convierte a entero.
-    numero1_valido = False
-    while not numero1_valido:
-        try:
-            numero1 = float(input("Digite el primer numero: "))
-            print("Número válido detectado")
-            numero1_valido = True
-        except:
-            print("Error: Ingrese un numero valido.")
-
-    print("Entrando a nueva operación")
-
-    # Solicita el segundo numero que se usara en la operacion.
-    numero2_valido = False
-    while not numero2_valido:
-        try:
-            numero2 = float(input("Digite el segundo numero: "))
-            print("Número válido detectado")
-            numero2_valido = True
-        except:
-            print("Error: Ingrese un numero valido.")
+    numero_valido1 = pedir_numero("Ingrese el primer numero: ")
+    numero_valido2 = pedir_numero("Ingrese el segundo numero: ")
 
     # Pide al usuario que elija que operacion matematica quiere realizar.
     operacion_valida = False
@@ -44,19 +20,19 @@ while usar_calculadora:
 
             # Si el usuario escribe "+", el programa realiza una suma.
         if operacion == "+":
-            resultado = numero1 + numero2
+            resultado = numero_valido1 + numero_valido2
             print("Resultado:", resultado)
             operacion_valida = True
 
             # Si el usuario escribe "-", el programa realiza una resta.
         elif operacion == "-":
-            resultado = numero1 - numero2
+            resultado = numero_valido1 - numero_valido2
             print("Resultado:", resultado)
             operacion_valida = True
 
             # Si el usuario escribe "*", el programa realiza una multiplicacion.
         elif operacion == "*":
-            resultado = numero1 * numero2
+            resultado = numero_valido1 * numero_valido2
             print("Resultado:", resultado)
             operacion_valida = True  
 
@@ -64,8 +40,8 @@ while usar_calculadora:
         elif operacion == "/":
 
             # Antes de dividir, verifica que el segundo numero no sea cero.
-            if numero2 != 0:
-                resultado = numero1 / numero2
+            if numero_valido2 != 0:
+                resultado = numero_valido1 / numero_valido2
                 print("Resultado:", resultado)
                 operacion_valida = True
                 
@@ -76,7 +52,7 @@ while usar_calculadora:
             print("Operacion invalida")
     
     
-    continuar = input("¿Desea realizar otra operacion? (s/n): ")
+    continuar = input(str("¿Desea realizar otra operacion? (s/n): "))
     if continuar != "s":
         usar_calculadora = False
         print("Gracias por usar la calculadora. ¡Hasta luego!") 
